@@ -1,11 +1,10 @@
 import os
-import re
 import time
 
 #funções das operações
 #soma
 def sum(valor1,valor2):
-    os.system('cls')    
+    os.system('cls' if os.name == 'nt' else 'clear')    
     resultado = valor1 + valor2
     res_final =  f'O resultado da soma de {valor1} + {valor2} é: {resultado}'
     print(res_final)       
@@ -15,49 +14,57 @@ def sum(valor1,valor2):
 
 #subtração
 def sub(valor1, valor2):
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     resultado = valor1 - valor2
-    res_final = f'O resultado da soma de {valor1} - {valor2} é: {resultado}'
+    res_final = f'O resultado da subtração de {valor1} - {valor2} é: {resultado}'
     print(res_final)
     time.sleep(5)
     options()
 
 #divisão
 def div(valor1, valor2):
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     resultado = valor1 / valor2
-    res_final = f'O resultado da soma de {valor1} / {valor2} é: {resultado}'
+    res_final = f'O resultado da divisão de {valor1} / {valor2} é: {resultado}'
     print(res_final)
     time.sleep(5)
     options()
 
 #multiplicação
 def mult(valor1, valor2):
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     resultado = valor1 * valor2
-    res_final = f'O resultado da soma de {valor1} * {valor2} é: {resultado}'
+    res_final = f'O resultado da multiplicação de {valor1} * {valor2} é: {resultado}'
     print(res_final)
     time.sleep(5)
     options()
 
 #exit aplicação
 def exit():
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     print('Deseja realmente sair da aplicação? S/N: ')
     user_response = input('Digite s ou n: ').lower()
     if user_response == 's':
         os._exit
         print('Saindo...')
         time.sleep(2)
-        os.system('cls')
-    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+    elif user_response == 'n':
         options()
+    else:
+        print('Ação inválida!')
+        time.sleep(2)
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Voltando para o menu!')        
+        time.sleep(2)        
+        options()
+        
 
 
 
 #opções
 def options():
-    os.system('cls')
+    os.system('cls' if os.name == 'nt' else 'clear')
     print('*******************************************************')
     print('************ Bem-vindo(a) basic calculator ************')
     print('*******************************************************')
@@ -69,22 +76,22 @@ def options():
     opcao_escolhida = int(input('digite a opção escolhida: '))
     match opcao_escolhida:
         case 1:   
-            os.system('cls')  
+            os.system('cls' if os.name == 'nt' else 'clear')
             valor1 = int(input('digite o valor 1: '))       
             valor2 = int(input('digite o valor 2: '))
             sum(valor1, valor2)
         case 2:
-            os.system('cls')
+            os.system('cls' if os.name == 'nt' else 'clear')
             valor1 = int(input('digite o valor 1: '))       
             valor2 = int(input('digite o valor 2: '))
             sub(valor1, valor2)
         case 3:
-            os.system('cls')
+            os.system('cls' if os.name == 'nt' else 'clear')
             valor1 = int(input('digite o dividendo valor 1: '))       
             valor2 = int(input('digite o divisor valor 2: '))
             div(valor1, valor2)
         case 4:
-            os.system('cls')
+            os.system('cls' if os.name == 'nt' else 'clear')
             valor1 = int(input('digite o multiplicando valor 1: '))       
             valor2 = int(input('digite o multiplicador valor 2: '))      
             mult(valor1, valor2)
