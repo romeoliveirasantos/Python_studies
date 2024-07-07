@@ -11,6 +11,7 @@ def add_alunos(nome,serie):
         'serie': serie
     }
     alunos.append(aluno)
+    count = count + 1
 
 add_alunos(nome,serie)
 
