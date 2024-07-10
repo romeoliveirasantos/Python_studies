@@ -1,1 +1,2 @@
-/.ipynb
+# Ignorar todos os arquivos .ipynb (Jupyter Notebook)
+*.ipynb
